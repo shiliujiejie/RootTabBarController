@@ -1,20 +1,24 @@
 PODS:
   - Kingfisher (4.10.1)
+  - Repeat (0.5.7)
   - SnapKit (4.2.0)
 
 DEPENDENCIES:
   - Kingfisher
+  - Repeat
   - SnapKit
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Kingfisher
+    - Repeat
     - SnapKit
 
 SPEC CHECKSUMS:
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
+  Repeat: 73c5ee602aed8f3c7bf1aa12d4cd0d3dc3edea0a
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
-PODFILE CHECKSUM: 0fe79d810470edb2a29952afdfa0124a8484022f
+PODFILE CHECKSUM: 6d3a81b193ac432baac103abbab1de1a182e55b7
 
 COCOAPODS: 1.6.1
