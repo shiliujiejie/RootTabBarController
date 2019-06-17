@@ -66,9 +66,7 @@ class MainController: UIViewController {
             guard let strongSelf = self else { return }
             strongSelf.pageVc.clickItemToScroll(index)
         }
-       
     }
-    
     
 }
 

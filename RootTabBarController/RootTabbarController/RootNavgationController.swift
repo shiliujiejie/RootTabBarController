@@ -14,7 +14,7 @@ class RootNavigationController: UINavigationController {
     var config: RootTabBarConfig! {
         didSet {
             navigationBar.setBackgroundImage(config.navBarBackgroundImg ?? UIColor.creatImageWithColor(color: config.navBarBackgroundColor!), for: .any, barMetrics: .default)
-            navigationBar.shadowImage = UIColor.creatImageWithColor(color: config.tabBarShadowColor!)
+            navigationBar.shadowImage = UIColor.creatImageWithColor(color: config.navBarshadowColor!)
             navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : config.navBarTitleColor!, NSAttributedString.Key.font : config.navBarTitleFont!]
         }
     }
@@ -23,7 +23,6 @@ class RootNavigationController: UINavigationController {
         super.viewDidLoad()
         self.interactivePopGestureRecognizer?.delegate = self as? UIGestureRecognizerDelegate
         self.defaultSetting()
-        
     }
     
     func defaultSetting() {
@@ -48,7 +47,7 @@ class RootNavigationController: UINavigationController {
     }
     
     //点击事件
-    @objc func didBackButton(sender: UIButton){
+    @objc func didBackButton(sender: UIButton) {
         self.popViewController(animated:true)
     }
 }

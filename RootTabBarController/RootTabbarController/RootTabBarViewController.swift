@@ -12,9 +12,8 @@ let screenHeight = UIScreen.main.bounds.size.height
 let safeAreaTopHeight: CGFloat = (screenHeight >= 812.0 && UIDevice.current.model == "iPhone" ? 88 : 64)
 let safeAreaBottomHeight: CGFloat = (screenHeight >= 812.0 && UIDevice.current.model == "iPhone"  ? 34 : 0)
 
-class RootTabBarViewController: UITabBarController, RootTabBarDelegate {
+class RootTabBarViewController: UITabBarController {
 
-    
     private lazy var tabbar: RootTabBar = {
         let tab = RootTabBar()
         tab.backgroundImage = config.tabBarBackgroundImg ?? UIColor.creatImageWithColor(color: config.tabBarBackgroundColor!)
@@ -51,17 +50,6 @@ class RootTabBarViewController: UITabBarController, RootTabBarDelegate {
         tabbar.config(config)
         // 淡化 tabBar 黑线
         self.tabBar.shadowImage = UIColor.creatImageWithColor(color: config.tabBarShadowColor!)
-    }
-    
-    /// 中间特殊按钮执行方法
-    func addClick() {
-        if config.centerViewController != nil {
-            if config.isAnimation { // 有动画，延迟0.6秒
-                self.perform(#selector(centerClick), with: nil, afterDelay: 0.35)
-            } else {
-                centerClick()
-            }
-        }
     }
     
     @objc func centerClick() {
@@ -102,4 +90,15 @@ class RootTabBarViewController: UITabBarController, RootTabBarDelegate {
     
 }
 
-
+extension RootTabBarViewController: RootTabBarDelegate {
+    /// 中间特殊按钮执行方法
+    func addClick() {
+        if config.centerViewController != nil {
+            if config.isAnimation { // 有动画，延迟0.6秒
+                self.perform(#selector(centerClick), with: nil, afterDelay: 0.35)
+            } else {
+                centerClick()
+            }
+        }
+    }
+}
