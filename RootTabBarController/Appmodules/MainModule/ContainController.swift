@@ -16,6 +16,13 @@ class ContainController: UIViewController {
         tableView.backgroundColor = UIColor.purple
         tableView.dataSource = self
         tableView.delegate = self
+        if #available(iOS 10.0, *) {
+            let refresh =  UIRefreshControl()
+            refresh.tintColor = UIColor.green
+            refresh.attributedTitle = NSAttributedString.init(string: "reload...", attributes: [NSAttributedString.Key.foregroundColor: UIColor.green])
+            tableView.refreshControl = refresh
+            tableView.refreshControl?.addTarget(self, action: #selector(refreshHandler), for: .valueChanged)
+        }
         return tableView
     }()
     
@@ -51,7 +58,16 @@ class ContainController: UIViewController {
         return nil
     }
   
-    
+    // MARK: Actions
+    @objc func refreshHandler() {
+        let deadlineTime = DispatchTime.now() + .seconds(1)
+        DispatchQueue.main.asyncAfter(deadline: deadlineTime, execute: { [weak self] in
+            if #available(iOS 10.0, *) {
+                self?.tableView.refreshControl?.endRefreshing()
+            }
+            self?.tableView.reloadData()
+        })
+    }
     
 }
 

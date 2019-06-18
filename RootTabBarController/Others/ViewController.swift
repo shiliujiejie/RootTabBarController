@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //configTabBar()
+        configTabBar()
        // timeRepeat()
     }
 
@@ -49,7 +49,7 @@ class ViewController: UIViewController {
     /// - Returns: RootTabBarConfig 对象
     private func getConfigModel() -> RootTabBarConfig {
         let rootConfig = RootTabBarConfig()
-        rootConfig.tabBarStyle = .center
+        rootConfig.tabBarStyle = .normal
         rootConfig.isAnimation = true
         rootConfig.animation = .rotation
         rootConfig.tabBarBackgroundColor = UIColor(r: 249, g: 160, b: 110, a: 1)
