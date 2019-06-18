@@ -19,8 +19,13 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+<<<<<<< HEAD
         //configTabBar()
        // timeRepeat()
+=======
+        configTabBar()
+        timeRepeat()
+>>>>>>> 37f0cc42f6b98864004b8316941a52b346228298
     }
 
     
