@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		042288CF22B8991400EE9B93 /* LeftMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 042288CC22B8991400EE9B93 /* LeftMenuCell.xib */; };
+		042288D022B8991400EE9B93 /* LeftMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042288CD22B8991400EE9B93 /* LeftMenuVC.swift */; };
+		042288D122B8991400EE9B93 /* LeftMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042288CE22B8991400EE9B93 /* LeftMenuCell.swift */; };
+		042288D522B8992000EE9B93 /* RightMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042288D222B8991F00EE9B93 /* RightMenuCell.swift */; };
+		042288D622B8992000EE9B93 /* RightMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 042288D322B8991F00EE9B93 /* RightMenuCell.xib */; };
+		042288DD22B899B500EE9B93 /* RightVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042288DC22B899B500EE9B93 /* RightVC.swift */; };
+		042288EA22B89A3E00EE9B93 /* FAPanel+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042288E022B89A3E00EE9B93 /* FAPanel+Animations.swift */; };
+		042288EB22B89A3E00EE9B93 /* UIImage+FAPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042288E122B89A3E00EE9B93 /* UIImage+FAPanel.swift */; };
+		042288EC22B89A3E00EE9B93 /* FAPanelConfigurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042288E222B89A3E00EE9B93 /* FAPanelConfigurations.swift */; };
+		042288ED22B89A3E00EE9B93 /* FAPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042288E322B89A3E00EE9B93 /* FAPanel.swift */; };
+		042288EE22B89A3E00EE9B93 /* FAPanel+KVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042288E422B89A3E00EE9B93 /* FAPanel+KVO.swift */; };
+		042288EF22B89A3E00EE9B93 /* UIView+FAPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042288E522B89A3E00EE9B93 /* UIView+FAPanel.swift */; };
+		042288F022B89A3E00EE9B93 /* FAPanel+InterfaceRotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042288E622B89A3E00EE9B93 /* FAPanel+InterfaceRotation.swift */; };
+		042288F122B89A3E00EE9B93 /* Collection+FAPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042288E722B89A3E00EE9B93 /* Collection+FAPanel.swift */; };
+		042288F222B89A3E00EE9B93 /* UIViewController+FAPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042288E822B89A3E00EE9B93 /* UIViewController+FAPanel.swift */; };
+		042288F322B89A3E00EE9B93 /* FAPanel+Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042288E922B89A3E00EE9B93 /* FAPanel+Gestures.swift */; };
 		04567E8022B3AA8E009268DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04567E7F22B3AA8E009268DE /* AppDelegate.swift */; };
 		04567E8222B3AA8E009268DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04567E8122B3AA8E009268DE /* ViewController.swift */; };
 		04567E8522B3AA8E009268DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04567E8322B3AA8E009268DE /* Main.storyboard */; };
@@ -31,6 +47,22 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		042288CC22B8991400EE9B93 /* LeftMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeftMenuCell.xib; sourceTree = "<group>"; };
+		042288CD22B8991400EE9B93 /* LeftMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuVC.swift; sourceTree = "<group>"; };
+		042288CE22B8991400EE9B93 /* LeftMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuCell.swift; sourceTree = "<group>"; };
+		042288D222B8991F00EE9B93 /* RightMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightMenuCell.swift; sourceTree = "<group>"; };
+		042288D322B8991F00EE9B93 /* RightMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RightMenuCell.xib; sourceTree = "<group>"; };
+		042288DC22B899B500EE9B93 /* RightVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightVC.swift; sourceTree = "<group>"; };
+		042288E022B89A3E00EE9B93 /* FAPanel+Animations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FAPanel+Animations.swift"; sourceTree = "<group>"; };
+		042288E122B89A3E00EE9B93 /* UIImage+FAPanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+FAPanel.swift"; sourceTree = "<group>"; };
+		042288E222B89A3E00EE9B93 /* FAPanelConfigurations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAPanelConfigurations.swift; sourceTree = "<group>"; };
+		042288E322B89A3E00EE9B93 /* FAPanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAPanel.swift; sourceTree = "<group>"; };
+		042288E422B89A3E00EE9B93 /* FAPanel+KVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FAPanel+KVO.swift"; sourceTree = "<group>"; };
+		042288E522B89A3E00EE9B93 /* UIView+FAPanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+FAPanel.swift"; sourceTree = "<group>"; };
+		042288E622B89A3E00EE9B93 /* FAPanel+InterfaceRotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FAPanel+InterfaceRotation.swift"; sourceTree = "<group>"; };
+		042288E722B89A3E00EE9B93 /* Collection+FAPanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+FAPanel.swift"; sourceTree = "<group>"; };
+		042288E822B89A3E00EE9B93 /* UIViewController+FAPanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+FAPanel.swift"; sourceTree = "<group>"; };
+		042288E922B89A3E00EE9B93 /* FAPanel+Gestures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FAPanel+Gestures.swift"; sourceTree = "<group>"; };
 		04567E7C22B3AA8E009268DE /* RootTabBarController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RootTabBarController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04567E7F22B3AA8E009268DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04567E8122B3AA8E009268DE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +102,68 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0422886D22B898B000EE9B93 /* FAPanelsShow */ = {
+			isa = PBXGroup;
+			children = (
+				042288CB22B898FC00EE9B93 /* LeftVC */,
+				042288CA22B898EB00EE9B93 /* RightVC */,
+				042288C922B898DE00EE9B93 /* CenterVC */,
+			);
+			path = FAPanelsShow;
+			sourceTree = "<group>";
+		};
+		042288C922B898DE00EE9B93 /* CenterVC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CenterVC;
+			sourceTree = "<group>";
+		};
+		042288CA22B898EB00EE9B93 /* RightVC */ = {
+			isa = PBXGroup;
+			children = (
+				042288D222B8991F00EE9B93 /* RightMenuCell.swift */,
+				042288D322B8991F00EE9B93 /* RightMenuCell.xib */,
+				042288DC22B899B500EE9B93 /* RightVC.swift */,
+			);
+			path = RightVC;
+			sourceTree = "<group>";
+		};
+		042288CB22B898FC00EE9B93 /* LeftVC */ = {
+			isa = PBXGroup;
+			children = (
+				042288CE22B8991400EE9B93 /* LeftMenuCell.swift */,
+				042288CC22B8991400EE9B93 /* LeftMenuCell.xib */,
+				042288CD22B8991400EE9B93 /* LeftMenuVC.swift */,
+			);
+			path = LeftVC;
+			sourceTree = "<group>";
+		};
+		042288DE22B89A2100EE9B93 /* FAPanelsSources */ = {
+			isa = PBXGroup;
+			children = (
+				042288DF22B89A3E00EE9B93 /* Classes */,
+			);
+			path = FAPanelsSources;
+			sourceTree = "<group>";
+		};
+		042288DF22B89A3E00EE9B93 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				042288E022B89A3E00EE9B93 /* FAPanel+Animations.swift */,
+				042288E122B89A3E00EE9B93 /* UIImage+FAPanel.swift */,
+				042288E222B89A3E00EE9B93 /* FAPanelConfigurations.swift */,
+				042288E322B89A3E00EE9B93 /* FAPanel.swift */,
+				042288E422B89A3E00EE9B93 /* FAPanel+KVO.swift */,
+				042288E522B89A3E00EE9B93 /* UIView+FAPanel.swift */,
+				042288E622B89A3E00EE9B93 /* FAPanel+InterfaceRotation.swift */,
+				042288E722B89A3E00EE9B93 /* Collection+FAPanel.swift */,
+				042288E822B89A3E00EE9B93 /* UIViewController+FAPanel.swift */,
+				042288E922B89A3E00EE9B93 /* FAPanel+Gestures.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		04567E7322B3AA8E009268DE = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +185,8 @@
 		04567E7E22B3AA8E009268DE /* RootTabBarController */ = {
 			isa = PBXGroup;
 			children = (
+				042288DE22B89A2100EE9B93 /* FAPanelsSources */,
+				0422886D22B898B000EE9B93 /* FAPanelsShow */,
 				04567E9122B3AAA5009268DE /* RootTabbarController */,
 				04567EB722B3F28B009268DE /* NicooPageView */,
 				04567EAD22B3D6C9009268DE /* Others */,
@@ -233,7 +329,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				042288D622B8992000EE9B93 /* RightMenuCell.xib in Resources */,
 				04567E8A22B3AA8F009268DE /* LaunchScreen.storyboard in Resources */,
+				042288CF22B8991400EE9B93 /* LeftMenuCell.xib in Resources */,
 				04567E8722B3AA8F009268DE /* Assets.xcassets in Resources */,
 				04567E8522B3AA8E009268DE /* Main.storyboard in Resources */,
 			);
@@ -274,6 +372,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-RootTabBarController/Pods-RootTabBarController-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Repeat/Repeat.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -281,6 +380,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Repeat.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,21 +395,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				042288EC22B89A3E00EE9B93 /* FAPanelConfigurations.swift in Sources */,
 				04567E9D22B3B2BC009268DE /* MainController.swift in Sources */,
 				04567E9F22B3B3DA009268DE /* PresentController.swift in Sources */,
 				04567EB122B3D747009268DE /* FindController.swift in Sources */,
 				04567EB922B3F445009268DE /* VCPageController.swift in Sources */,
 				0473577622B4ECFE0099CBD8 /* ItemTitleCell.swift in Sources */,
+				042288F222B89A3E00EE9B93 /* UIViewController+FAPanel.swift in Sources */,
 				0473577422B4DC980099CBD8 /* PageItemView.swift in Sources */,
 				04567EAF22B3D721009268DE /* MsgController.swift in Sources */,
+				042288F322B89A3E00EE9B93 /* FAPanel+Gestures.swift in Sources */,
+				042288EF22B89A3E00EE9B93 /* UIView+FAPanel.swift in Sources */,
+				042288EB22B89A3E00EE9B93 /* UIImage+FAPanel.swift in Sources */,
 				04567E8222B3AA8E009268DE /* ViewController.swift in Sources */,
+				042288D022B8991400EE9B93 /* LeftMenuVC.swift in Sources */,
 				04567EBD22B3F62F009268DE /* VCCollectionCell.swift in Sources */,
+				042288F122B89A3E00EE9B93 /* Collection+FAPanel.swift in Sources */,
+				042288F022B89A3E00EE9B93 /* FAPanel+InterfaceRotation.swift in Sources */,
 				04567E9722B3AAA5009268DE /* RootTabBarViewController.swift in Sources */,
 				04567E8022B3AA8E009268DE /* AppDelegate.swift in Sources */,
+				042288D122B8991400EE9B93 /* LeftMenuCell.swift in Sources */,
 				04567EB622B3DF80009268DE /* ContainController.swift in Sources */,
+				042288EE22B89A3E00EE9B93 /* FAPanel+KVO.swift in Sources */,
+				042288EA22B89A3E00EE9B93 /* FAPanel+Animations.swift in Sources */,
 				04567E9922B3AAA5009268DE /* RootTabBarConfig.swift in Sources */,
+				042288ED22B89A3E00EE9B93 /* FAPanel.swift in Sources */,
+				042288DD22B899B500EE9B93 /* RightVC.swift in Sources */,
 				04567EB322B3D758009268DE /* MineController.swift in Sources */,
 				04567E9B22B3AAA5009268DE /* RootTabbar.swift in Sources */,
+				042288D522B8992000EE9B93 /* RightMenuCell.swift in Sources */,
 				04567E9822B3AAA5009268DE /* Color_extension.swift in Sources */,
 				04567E9A22B3AAA5009268DE /* RootNavgationController.swift in Sources */,
 			);

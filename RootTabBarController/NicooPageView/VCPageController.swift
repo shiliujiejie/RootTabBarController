@@ -40,7 +40,7 @@ class VCPageController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+       
         if #available(iOS 11.0, *) {
             collectionView.contentInsetAdjustmentBehavior = .never
         } else {

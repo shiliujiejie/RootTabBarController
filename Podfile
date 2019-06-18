@@ -14,6 +14,7 @@ target 'RootTabBarController' do
 #pod 'MBProgressHUD'
 pod 'SnapKit'
 pod 'Kingfisher'
+pod 'Repeat'
 
 end
 

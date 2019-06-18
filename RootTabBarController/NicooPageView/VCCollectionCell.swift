@@ -34,6 +34,7 @@ class VCCollectionCell: UICollectionViewCell {
         contentView.backgroundColor = color
     }
     
+    
 }
 
 private extension VCCollectionCell {

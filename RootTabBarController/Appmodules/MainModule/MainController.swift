@@ -68,6 +68,16 @@ class MainController: UIViewController {
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        pageView.isHidden = false
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        pageView.isHidden = true
+    }
+    
 }
 
 extension MainController {

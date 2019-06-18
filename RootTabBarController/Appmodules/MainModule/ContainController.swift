@@ -14,15 +14,9 @@ class ContainController: UIViewController {
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: view.bounds, style: .plain)
         tableView.backgroundColor = UIColor.purple
-        tableView.allowsSelection = false
         tableView.dataSource = self
         tableView.delegate = self
         return tableView
-    }()
-    private let coverView: UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor.orange
-        return view
     }()
     
     override func viewDidLoad() {
@@ -35,9 +29,8 @@ class ContainController: UIViewController {
         } else {
             self.automaticallyAdjustsScrollViewInsets = false
         }
-        view.addSubview(coverView)
-        layoutCoverView()
-        coverView.addSubview(self.tableView)
+    
+        view.addSubview(self.tableView)
         layoutTableView()
         
     }
@@ -45,6 +38,19 @@ class ContainController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
+    
+    func getCurrentVC() -> MainController? {
+        var next = view.superview
+        while (next != nil) {
+            let nextResponder = next?.next
+            if (nextResponder is MainController) {
+                return nextResponder as? MainController
+            }
+            next = next?.superview
+        }
+        return nil
+    }
+  
     
     
 }
@@ -70,6 +76,9 @@ extension ContainController: UITableViewDataSource, UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let vc = getCurrentVC()
+        vc?.navigationController?.pushViewController(FindController(), animated: true)
+       
     }
 }
 
@@ -86,9 +95,5 @@ extension ContainController {
             make.bottom.equalTo(-bottomM)
         }
     }
-    func layoutCoverView() {
-        coverView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
-        }
-    }
+
 }
