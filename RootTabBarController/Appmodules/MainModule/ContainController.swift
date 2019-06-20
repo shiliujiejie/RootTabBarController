@@ -98,12 +98,21 @@ extension ContainController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
+extension ContainController: UIScrollViewDelegate {
+
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        print("scrollView.offsetY = \(scrollView.contentOffset.y)  === \(scrollView.contentSize.height)  ==== cha >\(scrollView.contentSize.height - scrollView.contentOffset.y) ==== screenH == \(screenHeight)")
+        if scrollView.contentSize.height - scrollView.contentOffset.y <= screenHeight {
+             print("reload - more data")
+        }
+    }
+}
 
 extension ContainController {
     func layoutTableView() {
         let statuBarHeight = UIApplication.shared.statusBarFrame.height
         let tabBarHeight: CGFloat = 49
-        let bottomM = is_iphoneX ? (tabBarHeight + safeAreaBottomHeight + 1) : tabBarHeight + 8
+        let bottomM = is_iphoneX ? (tabBarHeight + safeAreaBottomHeight + 1) : tabBarHeight + 8  // 84 86
         let topMa = is_iphoneX ? statuBarHeight + 42 : statuBarHeight + 35
         tableView.snp.makeConstraints { (make) in
            make.top.equalTo(topMa)

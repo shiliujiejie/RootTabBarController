@@ -24,6 +24,7 @@ class VCPageController: UIViewController {
         collection.delegate = self
         collection.dataSource = self
         collection.allowsSelection = false
+        collection.isPagingEnabled = true
         collection.backgroundColor = UIColor.clear
         collection.showsVerticalScrollIndicator = false
         collection.register(VCCollectionCell.classForCoder(), forCellWithReuseIdentifier: VCCollectionCell.cellId)
@@ -73,11 +74,10 @@ extension VCPageController: UICollectionViewDelegate, UICollectionViewDataSource
     /// 配置cell
     func cellForRow(with indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: VCCollectionCell.cellId, for: indexPath) as! VCCollectionCell
-        cell.setVCView(controllers[indexPath.item].view)
+        if cell.contentView.subviews.count <= 0 {
+             cell.setVCView(controllers[indexPath.item].view)
+        }
         return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     }
 }
 
@@ -88,10 +88,10 @@ extension VCPageController: UIScrollViewDelegate {
             let translatedPoint = scrollView.panGestureRecognizer.translation(in: scrollView)
             scrollView.panGestureRecognizer.isEnabled = false
 
-            if translatedPoint.x < -50 && self.currentIndex < (self.controllers.count - 1) {
+            if translatedPoint.x < -60 && self.currentIndex < (self.controllers.count - 1) {
                 self.currentIndex += 1
             }
-            if translatedPoint.x > 50 && self.currentIndex > 0 {
+            if translatedPoint.x > 60 && self.currentIndex > 0 {
                 self.currentIndex -= 1
             }
              let indexPath = IndexPath(row: self.currentIndex, section: 0)
