@@ -14,9 +14,10 @@ let safeAreaBottomHeight: CGFloat = (screenHeight >= 812.0 && UIDevice.current.m
 
 class RootTabBarViewController: UITabBarController {
 
+    
     private lazy var tabbar: RootTabBar = {
         let tab = RootTabBar()
-        tab.backgroundImage = config.tabBarBackgroundImg ?? UIColor.creatImageWithColor(color: config.tabBarBackgroundColor!)
+        tab.backgroundImage = config.tabBarBackgroundImg ?? UIColor.creatImageWithColor(color: config.tabBarBackgroundColor!,size: CGSize(width: screenWidth, height: self.tabBar.bounds.height))
         tab.addDelegate = self
         return tab
     }()
@@ -49,13 +50,7 @@ class RootTabBarViewController: UITabBarController {
         self.setConntrollers()
         tabbar.config(config)
         // 淡化 tabBar 黑线
-        self.tabBar.shadowImage = UIColor.creatImageWithColor(color: config.tabBarShadowColor!)
-    }
-    
-    @objc func centerClick() {
-        print("center click")
-        let nav = RootNavigationController(rootViewController: config.centerViewController!)
-        self.present(nav, animated: true, completion: nil)
+        self.tabBar.shadowImage = UIColor.creatImageWithColor(color: config.tabBarShadowColor!,size: CGSize(width: screenWidth, height: 0.5))
     }
     
     func setConntrollers() {
@@ -87,7 +82,6 @@ class RootTabBarViewController: UITabBarController {
             addChild(nav)
         }
     }
-    
 }
 
 extension RootTabBarViewController: RootTabBarDelegate {
@@ -100,5 +94,11 @@ extension RootTabBarViewController: RootTabBarDelegate {
                 centerClick()
             }
         }
+    }
+    
+    @objc func centerClick() {
+        print("center click")
+        let nav = RootNavigationController(rootViewController: config.centerViewController!)
+        self.present(nav, animated: true, completion: nil)
     }
 }

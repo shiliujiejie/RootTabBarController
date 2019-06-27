@@ -103,9 +103,9 @@ extension UIColor
     }
     
     /// UIColor转UIImage
-    class func creatImageWithColor(color:UIColor) -> UIImage{
+    class func creatImageWithColor(color: UIColor, size: CGSize) -> UIImage {
         
-        let rect = CGRect.init(x: 0, y: 0, width: 1, height: 0.5)
+        let rect = CGRect.init(x: 0, y: 0, width: size.width, height: size.height)
         UIGraphicsBeginImageContext(rect.size)
         let context = UIGraphicsGetCurrentContext()
         context!.setFillColor(color.cgColor)

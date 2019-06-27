@@ -125,7 +125,8 @@ private extension PageItemView {
         collectionView.snp.makeConstraints { (make) in
             make.leading.equalTo(15)
             make.trailing.equalTo(-15)
-            make.top.bottom.equalToSuperview()
+            make.top.equalToSuperview()
+            make.height.equalTo(44)
         }
     }
 }

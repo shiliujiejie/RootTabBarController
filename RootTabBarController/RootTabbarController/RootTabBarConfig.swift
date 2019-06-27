@@ -30,13 +30,13 @@ enum RootTabBarAnimation: Int {
 class RootTabBarConfig: NSObject {
     
     
-// MARK: - isTypeCenter
+    // MARK: - isTypeCenter
     var viewControllerCount: Int = 2
     
     /// 中间按钮点击 弹出
     var centerViewController: UIViewController?
     
-// MARK: - tabBar Setting
+    // MARK: - tabBar Setting
     
     /// tabBar风格
     var tabBarStyle: RootTabBarStyle = .normal
@@ -64,7 +64,7 @@ class RootTabBarConfig: NSObject {
     /// 顶部线条 颜色
     var tabBarShadowColor: UIColor? = UIColor(r: 249, g: 249, b: 249, a: 1)
     
-// MARK: - navigationBar Setting
+    // MARK: - navigationBar Setting
     
     /// 导航栏 背景色
     var navBarBackgroundColor: UIColor? = UIColor(white: 1.0, alpha: 0.8)
@@ -79,7 +79,7 @@ class RootTabBarConfig: NSObject {
     var navBarTitleFont: UIFont? = UIFont.systemFont(ofSize: 17)
     /// 导航栏返回图片
     var navBackButtonImage: UIImage? = UIImage(named: "navBackDefault")
-
+    
 }
 
 /// tabBarModel

@@ -13,8 +13,8 @@ class RootNavigationController: UINavigationController {
     
     var config: RootTabBarConfig! {
         didSet {
-            navigationBar.setBackgroundImage(config.navBarBackgroundImg ?? UIColor.creatImageWithColor(color: config.navBarBackgroundColor!), for: .any, barMetrics: .default)
-            navigationBar.shadowImage = UIColor.creatImageWithColor(color: config.navBarshadowColor!)
+            navigationBar.setBackgroundImage(config.navBarBackgroundImg ?? UIColor.creatImageWithColor(color: config.navBarBackgroundColor!,size: CGSize(width: screenWidth, height: self.navigationBar.bounds.height)), for: .any, barMetrics: .default)
+            navigationBar.shadowImage = UIColor.creatImageWithColor(color: config.navBarshadowColor!, size: CGSize(width: screenWidth, height: 0.5))
             navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : config.navBarTitleColor!, NSAttributedString.Key.font : config.navBarTitleFont!]
         }
     }

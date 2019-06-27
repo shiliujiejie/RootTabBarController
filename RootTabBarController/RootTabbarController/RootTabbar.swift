@@ -29,7 +29,7 @@ class RootTabBar: UITabBar {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-       self.addSubview(addButton)
+        self.addSubview(addButton)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -38,12 +38,12 @@ class RootTabBar: UITabBar {
     
     func config(_ config: RootTabBarConfig) {
         addButton.setImage(config.centerImage, for: .normal)
-        self.backgroundImage = config.tabBarBackgroundImg ?? UIColor.creatImageWithColor(color: config.tabBarBackgroundColor!)
+        self.backgroundImage = config.tabBarBackgroundImg ?? UIColor.creatImageWithColor(color: config.tabBarBackgroundColor!,size: CGSize(width: screenWidth, height: self.bounds.height))
         configModel = config
     }
     
     @objc func addButtonClick(){
-        if addDelegate != nil {
+        if addDelegate != nil{
             addDelegate?.addClick()
         }
     }
@@ -54,7 +54,7 @@ class RootTabBar: UITabBar {
         let buttonX = self.frame.size.width/CGFloat(configModel.tabBarStyle == .normal ? vcCount : vcCount + 1)
         var index = 0
         for barButton in self.subviews {
-            if barButton.isKind(of: NSClassFromString("UITabBarButton")!) {
+            if barButton.isKind(of: NSClassFromString("UITabBarButton")!){
                 if configModel.tabBarStyle == .center && addButton.currentImage != nil {
                     if index == vcCount/2 {
                         /// 设置中间特殊按钮位置
@@ -128,6 +128,7 @@ class RootTabBar: UITabBar {
             animationGroup.animations = [scaleAnim]
             tapView!.layer.add(animationGroup, forKey: nil)
         }
+        
     }
 }
 
