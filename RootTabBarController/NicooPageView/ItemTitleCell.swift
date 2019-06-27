@@ -16,9 +16,9 @@ class TitleItemCell: UICollectionViewCell {
     lazy var itemBtn: UIButton = {
         let btn = UIButton(type: .custom)
         btn.setTitleColor(UIColor.darkText, for: .normal)
-        btn.setTitleColor(UIColor.red, for: .selected)
-        btn.setBackgroundImage(UIColor.creatImageWithColor(color: UIColor.white), for: .normal)
-        btn.setBackgroundImage(UIColor.creatImageWithColor(color: UIColor.red), for: .selected)
+        btn.setTitleColor(UIColor.white, for: .selected)
+        btn.setBackgroundImage(UIColor.creatImageWithColor(color: UIColor.white, size: CGSize(width: 60, height: 30)), for: .normal)
+        btn.setBackgroundImage(UIColor.creatImageWithColor(color: UIColor.red, size: CGSize(width: 60, height: 30)), for: .selected)
         btn.addTarget(self, action: #selector(itemClick(_:)), for: .touchUpInside)
         return btn
     }()

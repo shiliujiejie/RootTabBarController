@@ -52,8 +52,8 @@ class ViewController: UIViewController {
         rootConfig.tabBarStyle = .normal
         rootConfig.isAnimation = true
         rootConfig.animation = .rotation
-        rootConfig.tabBarBackgroundColor = UIColor(r: 249, g: 160, b: 110, a: 1)
-        rootConfig.navBarBackgroundColor = UIColor(r: 249, g: 160, b: 110, a: 1)
+        rootConfig.tabBarBackgroundColor = UIColor(white: 0.7, alpha: 0.99)
+        rootConfig.navBarBackgroundColor = UIColor(white: 0.7, alpha: 0.99)
         rootConfig.tabBarShadowColor = UIColor.lightGray
         rootConfig.centerViewController = PresentController()
         

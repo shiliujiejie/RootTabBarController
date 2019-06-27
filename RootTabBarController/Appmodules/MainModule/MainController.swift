@@ -15,7 +15,7 @@ class MainController: UIViewController {
     
     private lazy var pageView: PageItemView = {
         let view = PageItemView(frame:CGRect(x: 0, y: 0, width: 100, height: 30))
-        view.backgroundColor = UIColor(r: 234, g: 234, b: 23)
+        view.backgroundColor = UIColor.clear
         view.titles = ["新闻","NBA","名从主人","能量球","不雅视频","生活小Tips","丛林贸易","朋友圈"]
         return view
     }()
@@ -82,12 +82,9 @@ class MainController: UIViewController {
 
 extension MainController {
     func layoutSubviews() {
-        let statuBarHeight = UIApplication.shared.statusBarFrame.height
-        let tabBarHeight: CGFloat = 49.0
-        let bottomM = is_iphoneX ? (tabBarHeight + safeAreaBottomHeight) : tabBarHeight
         pageVc.view.snp.makeConstraints { (make) in
             make.leading.trailing.equalToSuperview()
-            make.bottom.equalTo(-bottomM)
+            make.bottom.equalTo(0)
             make.top.equalTo(0)
         }
     }

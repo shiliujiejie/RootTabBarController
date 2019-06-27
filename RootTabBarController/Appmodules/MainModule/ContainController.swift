@@ -36,8 +36,12 @@ class ContainController: UIViewController {
         } else {
             self.automaticallyAdjustsScrollViewInsets = false
         }
-    
         view.addSubview(self.tableView)
+        
+        /// 这里不要问我，我也不知道为什么  底部 bottom: 要用 safeAreaTopHeight 才对
+        tableView.contentInset = UIEdgeInsets(top: safeAreaTopHeight, left: 0, bottom: safeAreaTopHeight, right: 0)
+        
+        
         layoutTableView()
         
     }
@@ -73,7 +77,7 @@ class ContainController: UIViewController {
 
 extension ContainController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 108
+        return 85
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 18
@@ -98,26 +102,12 @@ extension ContainController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
-extension ContainController: UIScrollViewDelegate {
-
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        print("scrollView.offsetY = \(scrollView.contentOffset.y)  === \(scrollView.contentSize.height)  ==== cha >\(scrollView.contentSize.height - scrollView.contentOffset.y) ==== screenH == \(screenHeight)")
-        if scrollView.contentSize.height - scrollView.contentOffset.y <= screenHeight {
-             print("reload - more data")
-        }
-    }
-}
-
 extension ContainController {
     func layoutTableView() {
-        let statuBarHeight = UIApplication.shared.statusBarFrame.height
-        let tabBarHeight: CGFloat = 49
-        let bottomM = is_iphoneX ? (tabBarHeight + safeAreaBottomHeight + 1) : tabBarHeight + 8  // 84 86
-        let topMa = is_iphoneX ? statuBarHeight + 42 : statuBarHeight + 35
         tableView.snp.makeConstraints { (make) in
-           make.top.equalTo(topMa)
+           make.top.equalTo(0)
             make.leading.trailing.equalToSuperview()
-            make.bottom.equalTo(-bottomM)
+            make.bottom.equalTo(0)
         }
     }
 

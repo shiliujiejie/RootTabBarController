@@ -41,13 +41,12 @@ class VCPageController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       
         if #available(iOS 11.0, *) {
             collectionView.contentInsetAdjustmentBehavior = .never
         } else {
             self.automaticallyAdjustsScrollViewInsets = false
         }
-        view.backgroundColor = UIColor.green
+        view.backgroundColor = UIColor.white
         view.addSubview(collectionView)
         layoutPageSubviews()
     }
@@ -115,9 +114,11 @@ private extension VCPageController {
     
     func layoutCollectionScroll() {
         collectionView.snp.makeConstraints { (make) in
-            make.top.equalTo(0)
-            make.leading.trailing.equalToSuperview()
-            make.bottom.equalToSuperview()
+            if #available(iOS 11.0, *) {
+                make.edges.equalTo(view.safeAreaLayoutGuide.snp.edges)
+            } else {
+                make.edges.equalToSuperview()
+            }
         }
     }
 }
