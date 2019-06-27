@@ -49,7 +49,7 @@ class ViewController: UIViewController {
     /// - Returns: RootTabBarConfig 对象
     private func getConfigModel() -> RootTabBarConfig {
         let rootConfig = RootTabBarConfig()
-        rootConfig.tabBarStyle = .normal
+        rootConfig.tabBarStyle = .center
         rootConfig.isAnimation = true
         rootConfig.animation = .rotation
         rootConfig.tabBarBackgroundColor = UIColor(white: 0.7, alpha: 0.99)

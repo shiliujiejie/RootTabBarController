@@ -10,7 +10,6 @@ import UIKit
 import SnapKit
 private let is_iphoneX = (UIScreen.main.bounds.height >= 812.0)
 class ContainController: UIViewController {
-
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: view.bounds, style: .plain)
         tableView.backgroundColor = UIColor.purple
@@ -23,14 +22,12 @@ class ContainController: UIViewController {
             tableView.refreshControl = refresh
             tableView.refreshControl?.addTarget(self, action: #selector(refreshHandler), for: .valueChanged)
         }
+        
         return tableView
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print("ChildOneVC --------")
-        //view.backgroundColor = UIColor.green
         if #available(iOS 11.0, *) {
             tableView.contentInsetAdjustmentBehavior = .never
         } else {
@@ -41,13 +38,13 @@ class ContainController: UIViewController {
         /// 这里不要问我，我也不知道为什么  底部 bottom: 要用 safeAreaTopHeight 才对
         tableView.contentInset = UIEdgeInsets(top: safeAreaTopHeight, left: 0, bottom: safeAreaTopHeight, right: 0)
         
-        
         layoutTableView()
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        print("ChildOneVC --------")
     }
     
     func getCurrentVC() -> MainController? {
