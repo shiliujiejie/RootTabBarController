@@ -27,8 +27,8 @@ class ViewController: UIViewController {
     
     private func configTabBar() {
         
-        let tabBarNormalImages = ["Main_N","book_N","task_N","acount_N"]
-        let tabBarSelectedImages = ["Main_S","book_S","task_S","acount_S"]
+        let tabBarNormalImages = ["shelfTabar_N","shopTabar_N","welfare_N","acount_N"]
+        let tabBarSelectedImages = ["shelfTabar_S","shopTabar_S","welfare_S","acount_S"]
         let tabBarTitles = ["首页","消息","发现","我的"]
         
         let rootModel1 = RootTabBarModel.init(title: tabBarTitles[0], imageNormal: tabBarNormalImages[0], imageSelected: tabBarSelectedImages[0], controller: MainController())
@@ -52,8 +52,8 @@ class ViewController: UIViewController {
         rootConfig.tabBarStyle = .center
         rootConfig.isAnimation = true
         rootConfig.animation = .rotation
-        rootConfig.tabBarBackgroundColor = UIColor(white: 0.7, alpha: 0.99)
-        rootConfig.navBarBackgroundColor = UIColor(white: 0.7, alpha: 0.99)
+        rootConfig.tabBarBackgroundColor = UIColor(white: 0.98, alpha: 0.99)
+        rootConfig.navBarBackgroundColor = UIColor(white: 0.98, alpha: 0.99)
         rootConfig.tabBarShadowColor = UIColor.lightGray
         rootConfig.centerViewController = PresentController()
         
