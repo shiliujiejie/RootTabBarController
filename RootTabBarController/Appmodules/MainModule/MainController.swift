@@ -8,11 +8,8 @@
 
 import UIKit
 
-private let is_iphoneX = (UIScreen.main.bounds.height >= 812.0)
-
 class MainController: UIViewController {
    
-    
     private lazy var pageView: PageItemView = {
         let view = PageItemView(frame:CGRect(x: 0, y: 0, width: 100, height: 30))
         view.backgroundColor = UIColor.clear

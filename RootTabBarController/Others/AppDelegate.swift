@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-       // configTabBar()
+        configTabBar()
         return true
     }
     
@@ -24,10 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = UIColor.white
         window?.makeKeyAndVisible()
         
-        let tabBarNormalImages = ["Main_N","book_N","task_N","acount_N"]
-        let tabBarSelectedImages = ["Main_S","book_S","task_S","acount_S"]
+        let tabBarNormalImages = ["shelfTabar_N","shopTabar_N","welfare_N","acount_N"]
+        let tabBarSelectedImages = ["shopTabar_S","shelfTabar_S","welfare_S","acount_S"]
         let tabBarTitles = ["首页","消息","发现","我的"]
-        
         
         let rootModel1 = RootTabBarModel.init(title: tabBarTitles[0], imageNormal: tabBarNormalImages[0], imageSelected: tabBarSelectedImages[0], controller: MainController())
         
@@ -38,20 +37,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let rootModel4 = RootTabBarModel.init(title: tabBarTitles[3], imageNormal: tabBarNormalImages[3], imageSelected: tabBarSelectedImages[3], controller: MineController())
         let tabBars =  [rootModel1, rootModel2, rootModel3, rootModel4]
         let tabbarVC = RootTabBarViewController.init(config: getConfigModel(), tabBars: tabBars)
-       // window?.rootViewController = tabbarVC
+        window?.rootViewController = tabbarVC
         
-        
-        
-        
-        let rootController = FAPanelController()
-        let leftvc = LeftMenuVC()
-        let rightvc = RightVC()
-         _ = rootController.center(tabbarVC).left(leftvc)
-        rootController.configs.rightPanelWidth = 140
-        //rootController.configs.bounceOnRightPanelOpen = false
-        rootController.configs.panFromEdge = true
-        rootController.rightPanelPosition = .front
-        window?.rootViewController = rootController
     }
     
     /// 定制 tabbar 和 navgationBar 样式
@@ -60,11 +47,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func getConfigModel() -> RootTabBarConfig {
         let rootConfig = RootTabBarConfig()
         rootConfig.tabBarStyle = .center
+        
+        /// 是否 点击  动画
         rootConfig.isAnimation = true
-        rootConfig.animation = .rotation
-        rootConfig.tabBarBackgroundColor = UIColor(r: 249, g: 160, b: 110, a: 1)
-        rootConfig.navBarBackgroundColor = UIColor(r: 249, g: 160, b: 110, a: 1)
-        rootConfig.tabBarShadowColor = UIColor.lightGray
+        
+        /// 点击 动画类型 scaleDown：小-大     rotation： 旋转
+        rootConfig.animation = .scaleDown
+        
+        /// 中心按钮j 上浮高度
+        rootConfig.centerInsetUp = 0
+        
+        rootConfig.tabBarBackgroundColor = UIColor(white: 0.98, alpha: 0.99)
+        
+        rootConfig.navBarBackgroundColor = UIColor(white: 0.98, alpha: 0.99)
+        
+        rootConfig.tabBarShadowColor = UIColor.groupTableViewBackground
+        
+        
         rootConfig.centerViewController = PresentController()
         
         return rootConfig

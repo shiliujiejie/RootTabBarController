@@ -6,7 +6,7 @@
 
 ## | ScreenRecording  |
 
-|:---------:|:-------:|:---------:||![Recording](https://github.com/shiliujiejie/RootTabBarController/blob/master/ScreenRecording_Normal.gif) | ![Recordings](https://github.com/shiliujiejie/RootTabBarController/blob/master/ScreenRecording_center.gif) | 
+|:---------:|:-------:|:---------:||![Recording](https://github.com/shiliujiejie/RootTabBarController/blob/master/ScreenRecording_Normal.gif) | ![Recordings](https://github.com/shiliujiejie/RootTabBarController/blob/master/ScreenRecording_center.gif) | ![Recordings](https://github.com/shiliujiejie/RootTabBarController/blob/master/rootTabbargif.gif) | 
 
 
 ## | USE  |
@@ -19,12 +19,12 @@
 
     }
 
-
      private func configTabBar() {
 
         let tabBarNormalImages = ["Main_N","book_N","task_N","acount_N"]
         let tabBarSelectedImages = ["Main_S","book_S","task_S","acount_S"]
         let tabBarTitles = ["首页","消息","发现","我的"]
+        
         let rootModel1 = RootTabBarModel.init(title: tabBarTitles[0], imageNormal: tabBarNormalImages[0], imageSelected: tabBarSelectedImages[0], controller: MainController())
 
         let rootModel2 = RootTabBarModel.init(title: tabBarTitles[1], imageNormal: tabBarNormalImages[1], imageSelected: tabBarSelectedImages[1], controller: MsgController())
@@ -32,6 +32,7 @@
         let rootModel3 = RootTabBarModel.init(title: tabBarTitles[2], imageNormal: tabBarNormalImages[2], imageSelected: tabBarSelectedImages[2], controller: FindController())
 
         let rootModel4 = RootTabBarModel.init(title: tabBarTitles[3], imageNormal: tabBarNormalImages[3], imageSelected: tabBarSelectedImages[3], controller: MineController())
+        
         let tabBars =  [rootModel1, rootModel2, rootModel3, rootModel4]
         let tabbarVC = RootTabBarViewController.init(config: getConfigModel(), tabBars: tabBars)
         self.addChild(tabbarVC)
@@ -49,11 +50,22 @@
        /// center -> 中间凸出按钮  normal -> 常规样式
        rootConfig.tabBarStyle = .normal
        
+       /// 是否 点击  动画
        rootConfig.isAnimation = true
-       rootConfig.animation = .rotation
-       rootConfig.tabBarBackgroundColor = UIColor(r: 249, g: 160, b: 110, a: 1)
-       rootConfig.navBarBackgroundColor = UIColor(r: 249, g: 160, b: 110, a: 1)
-       rootConfig.tabBarShadowColor = UIColor.lightGray
+       
+       /// 点击 动画类型 scaleDown：小-大     rotation： 旋转
+       rootConfig.animation = .scaleDown
+       
+       /// 中心按钮j 上浮高度
+       rootConfig.centerInsetUp = 0
+       
+       rootConfig.tabBarBackgroundColor = UIColor(white: 0.98, alpha: 0.99)
+       
+       rootConfig.navBarBackgroundColor = UIColor(white: 0.98, alpha: 0.99)
+       
+       rootConfig.tabBarShadowColor = UIColor.groupTableViewBackground
+       
+       
        rootConfig.centerViewController = PresentController()
 
        return rootConfig

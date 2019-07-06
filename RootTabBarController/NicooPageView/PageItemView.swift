@@ -111,7 +111,7 @@ extension PageItemView: UICollectionViewDelegate, UICollectionViewDataSource, UI
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let size = self.getwith(font: UIFont.systemFont(ofSize: 15), height: 25, string: titles[indexPath.item])
-        return CGSize(width: size.width + 30, height: 35)
+        return CGSize(width: size.width + 40, height: 35)
     }
     
 }

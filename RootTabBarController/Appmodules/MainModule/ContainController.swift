@@ -8,17 +8,19 @@
 
 import UIKit
 import SnapKit
-private let is_iphoneX = (UIScreen.main.bounds.height >= 812.0)
+
+
 class ContainController: UIViewController {
+    
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: view.bounds, style: .plain)
-        tableView.backgroundColor = UIColor.purple
+        tableView.backgroundColor = UIColor.white
         tableView.dataSource = self
         tableView.delegate = self
         if #available(iOS 10.0, *) {
             let refresh =  UIRefreshControl()
-            refresh.tintColor = UIColor.green
-            refresh.attributedTitle = NSAttributedString.init(string: "reload...", attributes: [NSAttributedString.Key.foregroundColor: UIColor.green])
+            refresh.tintColor = UIColor.lightGray
+            refresh.attributedTitle = NSAttributedString.init(string: "reload...", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
             tableView.refreshControl = refresh
             tableView.refreshControl?.addTarget(self, action: #selector(refreshHandler), for: .valueChanged)
         }
@@ -95,6 +97,7 @@ extension ContainController: UITableViewDataSource, UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         let vc = getCurrentVC()
         vc?.navigationController?.pushViewController(FindController(), animated: true)
+       
        
     }
 }

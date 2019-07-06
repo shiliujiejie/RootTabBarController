@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        configTabBar()
+        //configTabBar()
        // timeRepeat()
     }
 
@@ -50,11 +50,23 @@ class ViewController: UIViewController {
     private func getConfigModel() -> RootTabBarConfig {
         let rootConfig = RootTabBarConfig()
         rootConfig.tabBarStyle = .center
+        
+        /// 是否 点击  动画
         rootConfig.isAnimation = true
+        
+        /// 点击 动画类型 scaleDown：小-大     rotation： 旋转
         rootConfig.animation = .scaleDown
+        
+        /// 中心按钮j 上浮高度
+        rootConfig.centerInsetUp = 0
+        
         rootConfig.tabBarBackgroundColor = UIColor(white: 0.98, alpha: 0.99)
+    
         rootConfig.navBarBackgroundColor = UIColor(white: 0.98, alpha: 0.99)
-        rootConfig.tabBarShadowColor = UIColor.lightGray
+        
+        rootConfig.tabBarShadowColor = UIColor.groupTableViewBackground
+        
+        
         rootConfig.centerViewController = PresentController()
         
         return rootConfig

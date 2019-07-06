@@ -16,15 +16,19 @@ class TitleItemCell: UICollectionViewCell {
     lazy var itemBtn: UIButton = {
         let btn = UIButton(type: .custom)
         btn.setTitleColor(UIColor.darkText, for: .normal)
-        btn.setTitleColor(UIColor.white, for: .selected)
+        btn.setTitleColor(UIColor.red, for: .selected)
         btn.setBackgroundImage(UIColor.creatImageWithColor(color: UIColor.white, size: CGSize(width: 60, height: 30)), for: .normal)
-        btn.setBackgroundImage(UIColor.creatImageWithColor(color: UIColor.red, size: CGSize(width: 60, height: 30)), for: .selected)
+       // btn.setBackgroundImage(UIColor.creatImageWithColor(color: UIColor.orange, size: CGSize(width: 60, height: 30)), for: .selected)
         btn.addTarget(self, action: #selector(itemClick(_:)), for: .touchUpInside)
+        btn.layer.cornerRadius = 15
+        btn.layer.masksToBounds = true
         return btn
     }()
     let lineView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.red
+        view.layer.cornerRadius = 1.5
+        view.layer.masksToBounds = true
         return view
     }()
     
@@ -32,7 +36,7 @@ class TitleItemCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        contentView.backgroundColor = UIColor.yellow
+        contentView.backgroundColor = UIColor.clear
         addSubview(lineView)
         addSubview(itemBtn)
         layoutPageSubviews()

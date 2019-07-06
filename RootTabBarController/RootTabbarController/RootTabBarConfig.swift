@@ -49,7 +49,7 @@ class RootTabBarConfig: NSObject {
     /// 中间按钮图片(RootTabBarType == .center 时设置，normal 时设置无效)
     var centerImage: UIImage? = UIImage(named: "center_add")
     
-    /// 中心按钮j 上浮高度
+    /// 中心按钮 上浮高度
     var centerInsetUp: CGFloat = 15.0
     
     /// bar 背景色
