@@ -51,6 +51,16 @@ class MainController: UIViewController {
         super.viewDidLoad()
         
         
+        
+        if let controllers = self.tabBarController?.viewControllers {
+            controllers[3].tabBarItem.badgeValue = "3"
+            if #available(iOS 10.0, *) {
+                controllers[3].tabBarItem.badgeColor = UIColor.gray
+            }
+        }
+        
+        
+        
         view.backgroundColor = UIColor(r: 245, g: 190, b: 130)
         navigationController?.navigationBar.addSubview(pageView)
         layoutPageView()

@@ -15,17 +15,18 @@ class MsgController: UIViewController {
 
       
         view.backgroundColor = UIColor(r: 98, g: 179, b: 250)
+        
+        
+       // self.tabBarController?.selectedIndex = 3
+        self.tabBarItem.badgeValue = "5"
+        if #available(iOS 10.0, *) {
+            self.tabBarItem.badgeColor = UIColor.red
+        }
+       
+       
+    
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
