@@ -41,12 +41,12 @@ class MainController: UIViewController {
     private lazy var pageVc: VCPageController = {
         let pageVC = VCPageController()
         pageVC.controllers = vcs
+        
         return pageVC
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         
         if let controllers = self.tabBarController?.viewControllers {
@@ -55,9 +55,7 @@ class MainController: UIViewController {
                 controllers[3].tabBarItem.badgeColor = UIColor.gray
             }
         }
-        
-        
-        
+
         view.backgroundColor = UIColor(r: 245, g: 190, b: 130)
         navigationController?.navigationBar.addSubview(pageView)
         layoutPageView()

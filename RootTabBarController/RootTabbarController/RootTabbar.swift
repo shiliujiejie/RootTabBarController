@@ -102,12 +102,6 @@ class RootTabBar: UITabBar {
     
     func animationTap(_ tapView: UIView?) {
         if tapView == nil { return }
-        let animationGroup = CAAnimationGroup()
-        animationGroup.duration = 0.35
-        animationGroup.beginTime = CACurrentMediaTime()
-        animationGroup.repeatCount = 1
-        animationGroup.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
-        
         if configModel.animation == .scaleDown {
             let impliesAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
             impliesAnimation.values = [1.0 ,0.72, 1.12, 0.92, 1.10, 1.02, 1.0]
@@ -123,10 +117,10 @@ class RootTabBar: UITabBar {
         } else if configModel.animation == .rotation {
             let scaleAnim = CABasicAnimation()
             scaleAnim.keyPath = "transform.rotation.z"
+            scaleAnim.duration = 0.35
             scaleAnim.fromValue = 0
             scaleAnim.toValue = 2 * Double.pi
-            animationGroup.animations = [scaleAnim]
-            tapView!.layer.add(animationGroup, forKey: nil)
+            tapView!.layer.add(scaleAnim, forKey: nil)
         }
         
     }

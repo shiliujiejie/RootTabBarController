@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         let tabBarNormalImages = ["shelfTabar_N","shopTabar_N","welfare_N","acount_N"]
-        let tabBarSelectedImages = ["shopTabar_S","shelfTabar_S","welfare_S","acount_S"]
+        let tabBarSelectedImages = ["shelfTabar_S","shopTabar_S","welfare_S","acount_S"]
         let tabBarTitles = ["首页","消息","发现","我的"]
         
         let rootModel1 = RootTabBarModel.init(title: tabBarTitles[0], imageNormal: tabBarNormalImages[0], imageSelected: tabBarSelectedImages[0], controller: MainController())
@@ -55,7 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         rootConfig.animation = .scaleDown
         
         /// 中心按钮j 上浮高度
-        rootConfig.centerInsetUp = 0
+        rootConfig.centerInsetUp = 5
         
         rootConfig.tabBarBackgroundColor = UIColor(white: 0.98, alpha: 0.99)
         
