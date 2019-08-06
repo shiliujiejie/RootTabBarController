@@ -91,7 +91,9 @@ class RootTabBar: UITabBar {
                 /// 不在按钮上 系统处理
                 let tapView = super.hitTest(point, with: event)
                 if configModel.isAnimation {
-                    animationTap(tapView)
+                    if tapView!.isKind(of: NSClassFromString("UITabBarButton")!) {
+                        animationTap(tapView)
+                    }
                 }
                 return tapView
             } else {
