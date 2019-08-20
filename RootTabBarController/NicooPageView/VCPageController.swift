@@ -27,6 +27,7 @@ class VCPageController: UIViewController {
         collection.isPagingEnabled = true
         collection.backgroundColor = UIColor.clear
         collection.showsVerticalScrollIndicator = false
+        collection.showsHorizontalScrollIndicator = false
         collection.register(VCCollectionCell.classForCoder(), forCellWithReuseIdentifier: VCCollectionCell.cellId)
         return collection
     }()

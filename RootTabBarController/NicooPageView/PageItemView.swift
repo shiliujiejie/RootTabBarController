@@ -14,8 +14,7 @@ class ItemFlowLayout: UICollectionViewFlowLayout {
     //MARK:--- 布局之前的准备工作 初始化  这个方法只会调用一次
     override func prepare() {
         scrollDirection = UICollectionView.ScrollDirection.horizontal
-        minimumLineSpacing = 0
-        minimumInteritemSpacing = 8   // 水平最小间距
+        minimumInteritemSpacing = 0
         sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         super.prepare()
     }
@@ -30,15 +29,17 @@ class ItemFlowLayout: UICollectionViewFlowLayout {
 class PageItemView: UIView {
 
     private lazy var collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        let collection = UICollectionView(frame: self.bounds, collectionViewLayout: ItemFlowLayout())
+        let itemFlowLayout = ItemFlowLayout()
+        itemFlowLayout.minimumLineSpacing = configModel.itemMargin // 水平最小间距
+        let collection = UICollectionView(frame: self.bounds, collectionViewLayout: itemFlowLayout)
         collection.delegate = self
         collection.dataSource = self
         collection.allowsSelection = false
-        collection.backgroundColor = UIColor.clear
+        collection.isScrollEnabled = configModel.scrollEnabled
+        collection.backgroundColor = configModel.pageViewBgColor
+        collection.layer.cornerRadius = configModel.itemViewCornerRadius
         collection.showsVerticalScrollIndicator = false
         collection.showsHorizontalScrollIndicator = false
-        
         collection.register(TitleItemCell.classForCoder(), forCellWithReuseIdentifier: TitleItemCell.cellId)
         return collection
     }()
@@ -46,10 +47,11 @@ class PageItemView: UIView {
     
     var titles = [String]()
     var currentIndex = 0
+    var configModel: PageItemConfig!
     
-    override init(frame: CGRect) {
+    init(frame:CGRect, config: PageItemConfig) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor.yellow
+        configModel = config
         self.addSubview(collectionView)
         layoutPageSubviews()
     }
@@ -91,8 +93,10 @@ extension PageItemView: UICollectionViewDelegate, UICollectionViewDataSource, UI
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TitleItemCell.cellId, for: indexPath) as! TitleItemCell
+        cell.setConfig(configModel)
         cell.itemBtn.setTitle(titles[indexPath.item], for: .normal)
         cell.itemBtn.isSelected = indexPath.item == currentIndex
+        cell.itemBtn.titleLabel?.font = cell.itemBtn.isSelected ? configModel.titleFontSelected : configModel.titleFontNormal
         if indexPath.item == currentIndex {
             cell.lineView.isHidden = false
         } else {
@@ -110,8 +114,15 @@ extension PageItemView: UICollectionViewDelegate, UICollectionViewDataSource, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size = self.getwith(font: UIFont.systemFont(ofSize: 15), height: 25, string: titles[indexPath.item])
-        return CGSize(width: size.width + 30, height: 35)
+        if configModel.isAverageWith {
+            let avgWith = self.frame.width - configModel.leftRightMargin*2 - configModel.itemMargin*CGFloat(titles.count - 1)
+            return CGSize(width: avgWith/CGFloat(titles.count), height: self.frame.height)
+        }
+        if configModel.itemWidth > 0.0 {
+            return CGSize(width: configModel.itemWidth, height: self.frame.height)
+        }
+        let size = self.getwith(font: configModel.titleFontNormal, height: 25, string: titles[indexPath.item])
+        return CGSize(width: size.width + configModel.titleMargin*2, height: self.frame.height)
     }
     
 }
@@ -123,10 +134,9 @@ private extension PageItemView {
     
     func layoutCollection() {
         collectionView.snp.makeConstraints { (make) in
-            make.leading.equalTo(15)
-            make.trailing.equalTo(-15)
-            make.top.equalToSuperview()
-            make.height.equalTo(44)
+            make.leading.equalTo(configModel.leftRightMargin)
+            make.trailing.equalTo(-configModel.leftRightMargin)
+            make.top.bottom.equalToSuperview()
         }
     }
 }

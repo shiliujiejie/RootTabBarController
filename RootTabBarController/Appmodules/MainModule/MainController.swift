@@ -11,7 +11,7 @@ import UIKit
 class MainController: UIViewController {
    
     private lazy var pageView: PageItemView = {
-        let view = PageItemView(frame:CGRect(x: 0, y: 0, width: 100, height: 30))
+        let view = PageItemView.init(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 40),config: PageItemConfig())
         view.backgroundColor = UIColor.clear
         view.titles = ["新闻","NBA","名从主人","能量球","不雅视频","生活小Tips","丛林贸易","朋友圈"]
         return view
@@ -97,7 +97,7 @@ extension MainController {
         pageView.snp.makeConstraints { (make) in
             make.leading.trailing.equalToSuperview()
             make.top.equalTo(0)
-            make.height.equalTo(44)
+            make.height.equalTo(40)
         }
     }
 }

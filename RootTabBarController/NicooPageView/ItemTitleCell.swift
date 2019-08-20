@@ -17,7 +17,7 @@ class TitleItemCell: UICollectionViewCell {
         let btn = UIButton(type: .custom)
         btn.setTitleColor(UIColor.darkText, for: .normal)
         btn.setTitleColor(UIColor.red, for: .selected)
-        btn.setBackgroundImage(UIColor.creatImageWithColor(color: UIColor.white, size: CGSize(width: 60, height: 30)), for: .normal)
+        btn.setBackgroundImage(UIColor.creatImageWithColor(color: UIColor.green, size: CGSize(width: 60, height: 35)), for: .normal)
        // btn.setBackgroundImage(UIColor.creatImageWithColor(color: UIColor.orange, size: CGSize(width: 60, height: 30)), for: .selected)
         btn.addTarget(self, action: #selector(itemClick(_:)), for: .touchUpInside)
         btn.layer.cornerRadius = 15
@@ -44,6 +44,21 @@ class TitleItemCell: UICollectionViewCell {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setConfig(_ config: PageItemConfig) {
+        itemBtn.setTitleColor(config.titleColorNormal, for: .normal)
+        itemBtn.setTitleColor(config.titleColorSelected, for: .selected)
+        itemBtn.setBackgroundImage(UIColor.creatImageWithColor(color: config.itemBgColorNormal, size: CGSize(width: 60, height: 40)), for: .normal)
+        itemBtn.setBackgroundImage(UIColor.creatImageWithColor(color: config.itemBgColorSelected, size: CGSize(width: 60, height: 40)), for: .selected)
+        itemBtn.layer.cornerRadius = config.itemCornerRadius
+        itemBtn.layer.masksToBounds = true
+        lineView.layer.cornerRadius = config.lineSize.height/2
+        lineView.backgroundColor = config.lineColor
+        lineView.snp.updateConstraints { (make) in
+            make.width.equalTo(config.lineSize.width)
+            make.height.equalTo(config.lineSize.height)
+        }
     }
     
     @objc func itemClick(_ sender: UIButton) {
