@@ -41,7 +41,7 @@ class PageItemConfig: NSObject {
     var itemCornerRadius: CGFloat = 0.0
     /// item间距
     var itemMargin: CGFloat = 10.0
-    /// 标题间距
+    /// 标题左右边距
     var titleMargin: CGFloat = 15.0
     /// 字体大小
     var titleFontNormal: UIFont = UIFont.systemFont(ofSize: 16)
