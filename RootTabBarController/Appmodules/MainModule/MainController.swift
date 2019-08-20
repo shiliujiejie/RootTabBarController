@@ -9,13 +9,6 @@
 import UIKit
 
 class MainController: UIViewController {
-   
-    private lazy var pageView: PageItemView = {
-        let view = PageItemView.init(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 40),config: PageItemConfig())
-        view.backgroundColor = UIColor.clear
-        view.titles = ["新闻","NBA","名从主人","能量球","不雅视频","生活小Tips","丛林贸易","朋友圈"]
-        return view
-    }()
     
     private lazy var vcs: [UIViewController] = {
         let vc1 = ContainController()
@@ -37,7 +30,21 @@ class MainController: UIViewController {
         let viewControllers = [vc1,vc2,vc3,vc4,vc5,vc6,vc7,vc8]
         return viewControllers
     }()
+   
+    private lazy var pageView: PageItemView = {
+        let view = PageItemView.init(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 40),config: config)
+        view.backgroundColor = UIColor.clear
+        view.titles = ["新闻","NBA","名从主人","能量球","不雅视频","生活小Tips","丛林贸易","朋友圈"]
+        return view
+    }()
     
+    /// 自定义pageView 设置   /*  --- 更多配置 请查看 PageItemConfig 属性 ---- */
+    private lazy var config: PageItemConfig = {
+        let pageConfig = PageItemConfig()
+        pageConfig.itemBgColorSelected = UIColor.yellow
+        return pageConfig
+    }()
+   
     private lazy var pageVc: VCPageController = {
         let pageVC = VCPageController()
         pageVC.controllers = vcs

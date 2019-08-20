@@ -8,12 +8,12 @@
 
 import UIKit
 
-/// <#Description#>
 class PageItemConfig: NSObject {
 
 // MARK: - pageView Config
+    
     /// ItemView背景色
-    var pageViewBgColor: UIColor = UIColor.yellow
+    var pageViewBgColor: UIColor = UIColor.clear
     /// itemView 是否可滑动
     var scrollEnabled: Bool = true
     /// 是否平均分宽度  （一旦设置  itemWidth失效，title不再自适应宽度）
@@ -25,6 +25,7 @@ class PageItemConfig: NSObject {
     
     
 // MARK: - Item Config
+    
     /// 文字 非选中 色
     var titleColorNormal: UIColor = UIColor(r: 69, g: 69, b: 69)
     /// 文字 选中 色
@@ -39,17 +40,17 @@ class PageItemConfig: NSObject {
     /// item圆角
     var itemCornerRadius: CGFloat = 0.0
     /// item间距
-    var itemMargin: CGFloat = 10
+    var itemMargin: CGFloat = 10.0
     /// 标题间距
-    var titleMargin: CGFloat = 15
-  
+    var titleMargin: CGFloat = 15.0
     /// 字体大小
     var titleFontNormal: UIFont = UIFont.systemFont(ofSize: 16)
     /// 选中字体大小
-    var titleFontSelected: UIFont = UIFont.systemFont(ofSize: 18)
+    var titleFontSelected: UIFont = UIFont.systemFont(ofSize: 16)
     
     
 // MARK: - line Config
+    
     /// 底部指示线条y颜色
     var lineColor: UIColor = UIColor(r: 255, g: 42, b: 49)
     /// 底部现 size
