@@ -12,15 +12,15 @@ class PageItemConfig: NSObject {
 
 // MARK: - pageView Config
     
-    /// ItemView背景色
+    /// pageView背景色
     var pageViewBgColor: UIColor = UIColor.clear
-    /// itemView 是否可滑动
+    /// pageView 是否可滑动
     var scrollEnabled: Bool = true
     /// 是否平均分宽度  （一旦设置  itemWidth失效，title不再自适应宽度）
     var isAverageWith: Bool = false
     /// 左右缩进
     var leftRightMargin: CGFloat = 10.0
-    /// itemView 圆角
+    /// pageView 圆角
     var itemViewCornerRadius: CGFloat = 0.0
     
     

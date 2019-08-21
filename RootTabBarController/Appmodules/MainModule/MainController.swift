@@ -41,7 +41,14 @@ class MainController: UIViewController {
     /// 自定义pageView 设置   /*  --- 更多配置 请查看 PageItemConfig 属性 ---- */
     private lazy var config: PageItemConfig = {
         let pageConfig = PageItemConfig()
-        pageConfig.itemBgColorSelected = UIColor.yellow
+        //pageConfig.itemBgColorSelected = UIColor.yellow
+        pageConfig.pageViewBgColor = UIColor.darkGray
+        pageConfig.titleColorNormal = UIColor.white
+        pageConfig.titleColorSelected = UIColor.green
+        pageConfig.titleFontNormal = UIFont.boldSystemFont(ofSize: 16)
+        pageConfig.titleFontSelected = UIFont.boldSystemFont(ofSize: 18)
+        pageConfig.lineColor = UIColor.green
+        pageConfig.lineSize = CGSize(width: 30, height: 3.5)
         return pageConfig
     }()
    
@@ -80,16 +87,16 @@ class MainController: UIViewController {
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        pageView.isHidden = false
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        pageView.isHidden = true
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
-    
+
 }
 
 extension MainController {

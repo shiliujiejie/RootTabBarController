@@ -59,7 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         rootConfig.tabBarBackgroundColor = UIColor(white: 0.98, alpha: 0.99)
         
-        rootConfig.navBarBackgroundColor = UIColor(white: 0.98, alpha: 0.99)
+        rootConfig.navBarBackgroundColor = UIColor(white: 0.2, alpha: 0.99)
         
         rootConfig.tabBarShadowColor = UIColor.groupTableViewBackground
         

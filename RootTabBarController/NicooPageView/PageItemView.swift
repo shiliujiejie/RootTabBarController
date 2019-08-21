@@ -15,7 +15,7 @@ class ItemFlowLayout: UICollectionViewFlowLayout {
     override func prepare() {
         scrollDirection = UICollectionView.ScrollDirection.horizontal
         minimumInteritemSpacing = 0
-        sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        
         super.prepare()
     }
     //（该方法默认返回false） 返回true  frame发生改变就重新布局  内部会重新调用prepare 和layoutAttributesForElementsInRect
@@ -31,6 +31,7 @@ class PageItemView: UIView {
     private lazy var collectionView: UICollectionView = {
         let itemFlowLayout = ItemFlowLayout()
         itemFlowLayout.minimumLineSpacing = configModel.itemMargin // 水平最小间距
+        itemFlowLayout.sectionInset = UIEdgeInsets(top: 0, left: configModel.leftRightMargin, bottom: 0, right: configModel.leftRightMargin)
         let collection = UICollectionView(frame: self.bounds, collectionViewLayout: itemFlowLayout)
         collection.delegate = self
         collection.dataSource = self
@@ -134,9 +135,7 @@ private extension PageItemView {
     
     func layoutCollection() {
         collectionView.snp.makeConstraints { (make) in
-            make.leading.equalTo(configModel.leftRightMargin)
-            make.trailing.equalTo(-configModel.leftRightMargin)
-            make.top.bottom.equalToSuperview()
+            make.top.bottom.leading.trailing.equalToSuperview()
         }
     }
 }
