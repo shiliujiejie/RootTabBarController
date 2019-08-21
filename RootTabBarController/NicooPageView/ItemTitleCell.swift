@@ -52,8 +52,8 @@ class TitleItemCell: UICollectionViewCell {
         itemBtn.setBackgroundImage(UIColor.creatImageWithColor(color: config.itemBgColorNormal, size: CGSize(width: 60, height: 40)), for: .normal)
         itemBtn.setBackgroundImage(UIColor.creatImageWithColor(color: config.itemBgColorSelected, size: CGSize(width: 60, height: 40)), for: .selected)
         itemBtn.layer.cornerRadius = config.itemCornerRadius
-        itemBtn.layer.masksToBounds = true
         lineView.layer.cornerRadius = config.lineSize.height/2
+        itemBtn.layer.masksToBounds = true
         lineView.backgroundColor = config.lineColor
         lineView.snp.updateConstraints { (make) in
             make.width.equalTo(config.lineSize.width)

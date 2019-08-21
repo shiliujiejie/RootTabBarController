@@ -37,6 +37,7 @@
         let tabbarVC = RootTabBarViewController.init(config: getConfigModel(), tabBars: tabBars)
         self.addChild(tabbarVC)
         self.view.addSubview(tabbarVC.view)
+        //  window?.rootViewController = tabbarVc
      }
 
     /// 定制 tabbar 和 navgationBar 样式
@@ -64,13 +65,9 @@
        rootConfig.navBarBackgroundColor = UIColor(white: 0.98, alpha: 0.99)
        
        rootConfig.tabBarShadowColor = UIColor.groupTableViewBackground
-       
-       
-       rootConfig.centerViewController = PresentController()
 
        return rootConfig
     }
-
 
 
     }

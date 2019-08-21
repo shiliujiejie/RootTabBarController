@@ -19,6 +19,10 @@ class PresentController: UIViewController {
         return btn
     }()
     
+    deinit {
+        print("PresentController -- deinit")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configTabBar()

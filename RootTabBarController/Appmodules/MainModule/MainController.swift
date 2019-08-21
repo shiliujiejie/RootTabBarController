@@ -48,7 +48,7 @@ class MainController: UIViewController {
         pageConfig.titleFontNormal = UIFont.boldSystemFont(ofSize: 16)
         pageConfig.titleFontSelected = UIFont.boldSystemFont(ofSize: 18)
         pageConfig.lineColor = UIColor.red 
-        pageConfig.lineSize = CGSize(width: 30, height: 3.5)
+        pageConfig.lineSize = CGSize(width: 30, height: 3)
         return pageConfig
     }()
    

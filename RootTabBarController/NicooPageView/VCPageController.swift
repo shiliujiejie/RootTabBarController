@@ -73,10 +73,10 @@ extension VCPageController: UICollectionViewDelegate, UICollectionViewDataSource
     
     /// 配置cell
     func cellForRow(with indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: VCCollectionCell.cellId, for: indexPath) as! VCCollectionCell
-        if cell.contentView.subviews.count <= 0 {
-             cell.setVCView(controllers[indexPath.item].view)
-        }
+        let cellId = "\(VCCollectionCell.cellId)\(indexPath.item)"
+        collectionView.register(VCCollectionCell.classForCoder(), forCellWithReuseIdentifier: cellId)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! VCCollectionCell
+        cell.setVCView(controllers[indexPath.item].view)
         return cell
     }
 }
