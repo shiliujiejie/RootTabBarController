@@ -2,7 +2,6 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "IMG_20161231_154413.jpg",
       "scale" : "1x"
     },
     {
@@ -11,6 +10,7 @@
     },
     {
       "idiom" : "universal",
+      "filename" : "icons8-Message Filled@3x.png",
       "scale" : "3x"
     }
   ],

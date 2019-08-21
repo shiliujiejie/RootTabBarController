@@ -12,7 +12,6 @@ class FindController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "发现"
 
        view.backgroundColor = UIColor(r: 124, g: 245, b: 170)
     }
