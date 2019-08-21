@@ -12,6 +12,13 @@ let screenHeight = UIScreen.main.bounds.size.height
 let safeAreaTopHeight: CGFloat = (screenHeight >= 812.0 && UIDevice.current.model == "iPhone" ? 88 : 64)
 let safeAreaBottomHeight: CGFloat = (screenHeight >= 812.0 && UIDevice.current.model == "iPhone"  ? 34 : 0)
 
+public protocol RootTabbarControllerDelegate: class {
+    func centerClickAction()
+}
+public extension RootTabbarControllerDelegate {
+    func centerClickAction() { }
+}
+
 class RootTabBarViewController: UITabBarController {
 
     
@@ -25,6 +32,7 @@ class RootTabBarViewController: UITabBarController {
     private var config = RootTabBarConfig()
 
     private var tabBarModels = [RootTabBarModel]()
+    public weak var actionDelegate: RootTabbarControllerDelegate?
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -87,18 +95,15 @@ class RootTabBarViewController: UITabBarController {
 extension RootTabBarViewController: RootTabBarDelegate {
     /// 中间特殊按钮执行方法
     func addClick() {
-        if config.centerViewController != nil {
-            if config.isAnimation { // 有动画，延迟0.6秒
-                self.perform(#selector(centerClick), with: nil, afterDelay: 0.35)
-            } else {
-                centerClick()
-            }
+        if config.isAnimation { // 有动画，延迟0.6秒
+            self.perform(#selector(centerClick), with: nil, afterDelay: 0.35)
+        } else {
+            centerClick()
         }
     }
     
     @objc func centerClick() {
         print("center click")
-        let nav = RootNavigationController(rootViewController: config.centerViewController!)
-        self.present(nav, animated: true, completion: nil)
+        actionDelegate?.centerClickAction()
     }
 }

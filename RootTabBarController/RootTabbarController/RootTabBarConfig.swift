@@ -29,12 +29,8 @@ enum RootTabBarAnimation: Int {
 
 class RootTabBarConfig: NSObject {
     
-    
     // MARK: - isTypeCenter
     var viewControllerCount: Int = 2
-    
-    /// 中间按钮点击 弹出
-    var centerViewController: UIViewController?
     
     // MARK: - tabBar Setting
     

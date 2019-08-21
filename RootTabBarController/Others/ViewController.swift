@@ -66,8 +66,7 @@ class ViewController: UIViewController {
         
         rootConfig.tabBarShadowColor = UIColor.groupTableViewBackground
         
-        
-        rootConfig.centerViewController = PresentController()
+
         
         return rootConfig
     }

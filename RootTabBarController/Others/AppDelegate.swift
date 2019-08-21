@@ -12,7 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var tabbarVc: RootTabBarViewController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         configTabBar()
@@ -36,8 +36,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let rootModel4 = RootTabBarModel.init(title: tabBarTitles[3], imageNormal: tabBarNormalImages[3], imageSelected: tabBarSelectedImages[3], controller: MineController())
         let tabBars =  [rootModel1, rootModel2, rootModel3, rootModel4]
-        let tabbarVC = RootTabBarViewController.init(config: getConfigModel(), tabBars: tabBars)
-        window?.rootViewController = tabbarVC
+        tabbarVc = RootTabBarViewController.init(config: getConfigModel(), tabBars: tabBars)
+        window?.rootViewController = tabbarVc
+        tabbarVc?.actionDelegate = self
         
     }
     
@@ -66,10 +67,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         rootConfig.navBarBackgroundImg = UIImage(named: "TopBarBg.jpg")
         rootConfig.tabBarBackgroundImg = safeAreaBottomHeight > 0 ? UIImage(named: "kingdown.jpg") : UIImage(named: "kindownP.jpg")
-        rootConfig.centerViewController = PresentController()
         
         return rootConfig
     }
 
 }
 
+// MARK: - RootTabbarControllerDelegate
+extension AppDelegate: RootTabbarControllerDelegate {
+    func centerClickAction() {
+         print("index")
+        let nav = RootNavigationController(rootViewController: PresentController())
+        tabbarVc?.present(nav, animated: true, completion: nil)
+    }
+}
