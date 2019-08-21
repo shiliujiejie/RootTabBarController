@@ -55,15 +55,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         rootConfig.animation = .scaleDown
         
         /// 中心按钮j 上浮高度
-        rootConfig.centerInsetUp = 5
+        rootConfig.centerInsetUp = 15
         
         rootConfig.tabBarBackgroundColor = UIColor(white: 0.98, alpha: 0.99)
         
         rootConfig.navBarBackgroundColor = UIColor(white: 0.2, alpha: 0.99)
         
-        rootConfig.tabBarShadowColor = UIColor.groupTableViewBackground
+        rootConfig.tabBarShadowColor = UIColor.white
+        rootConfig.navBarshadowColor = UIColor.groupTableViewBackground
         
-        
+        rootConfig.navBarBackgroundImg = UIImage(named: "TopBarBg.jpg")
+        rootConfig.tabBarBackgroundImg = safeAreaBottomHeight > 0 ? UIImage(named: "kingdown.jpg") : UIImage(named: "kindownP.jpg")
         rootConfig.centerViewController = PresentController()
         
         return rootConfig

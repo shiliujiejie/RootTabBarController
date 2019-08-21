@@ -42,12 +42,12 @@ class MainController: UIViewController {
     private lazy var config: PageItemConfig = {
         let pageConfig = PageItemConfig()
         //pageConfig.itemBgColorSelected = UIColor.yellow
-        pageConfig.pageViewBgColor = UIColor.darkGray
-        pageConfig.titleColorNormal = UIColor.white
-        pageConfig.titleColorSelected = UIColor.green
+       // pageConfig.pageViewBgColor = UIColor(white: 0, alpha: 0.1)
+        pageConfig.titleColorNormal = UIColor.darkGray
+        pageConfig.titleColorSelected = UIColor.red
         pageConfig.titleFontNormal = UIFont.boldSystemFont(ofSize: 16)
         pageConfig.titleFontSelected = UIFont.boldSystemFont(ofSize: 18)
-        pageConfig.lineColor = UIColor.green
+        pageConfig.lineColor = UIColor.red 
         pageConfig.lineSize = CGSize(width: 30, height: 3.5)
         return pageConfig
     }()

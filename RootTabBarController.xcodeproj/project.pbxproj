@@ -28,6 +28,10 @@
 		0473577422B4DC980099CBD8 /* PageItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0473577322B4DC980099CBD8 /* PageItemView.swift */; };
 		0473577622B4ECFE0099CBD8 /* ItemTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0473577522B4ECFE0099CBD8 /* ItemTitleCell.swift */; };
 		04DB73F1230BD77E00FDFEA8 /* PageItemConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DB73F0230BD77E00FDFEA8 /* PageItemConfig.swift */; };
+		04DB73FB230D321300FDFEA8 /* kingdown.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04DB73FA230D321300FDFEA8 /* kingdown.jpg */; };
+		04DB73FD230D328C00FDFEA8 /* navBarss.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04DB73FC230D328C00FDFEA8 /* navBarss.jpg */; };
+		04DB7402230D35B900FDFEA8 /* TopBarBg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04DB7401230D35B900FDFEA8 /* TopBarBg.jpg */; };
+		04DB7404230D384C00FDFEA8 /* kindownP.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04DB7403230D384B00FDFEA8 /* kindownP.jpg */; };
 		6427F75653B6575D29F1D5AA /* Pods_RootTabBarController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E105159A70454A74B76AF53 /* Pods_RootTabBarController.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +59,10 @@
 		0473577322B4DC980099CBD8 /* PageItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageItemView.swift; sourceTree = "<group>"; };
 		0473577522B4ECFE0099CBD8 /* ItemTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTitleCell.swift; sourceTree = "<group>"; };
 		04DB73F0230BD77E00FDFEA8 /* PageItemConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageItemConfig.swift; sourceTree = "<group>"; };
+		04DB73FA230D321300FDFEA8 /* kingdown.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kingdown.jpg; sourceTree = "<group>"; };
+		04DB73FC230D328C00FDFEA8 /* navBarss.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = navBarss.jpg; sourceTree = "<group>"; };
+		04DB7401230D35B900FDFEA8 /* TopBarBg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TopBarBg.jpg; sourceTree = "<group>"; };
+		04DB7403230D384B00FDFEA8 /* kindownP.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kindownP.jpg; sourceTree = "<group>"; };
 		0D617B3334170B7CBF3DD98C /* Pods-RootTabBarController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RootTabBarController.debug.xcconfig"; path = "Target Support Files/Pods-RootTabBarController/Pods-RootTabBarController.debug.xcconfig"; sourceTree = "<group>"; };
 		0E105159A70454A74B76AF53 /* Pods_RootTabBarController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RootTabBarController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		403288FB33BE719A90AEF27A /* Pods-RootTabBarController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RootTabBarController.release.xcconfig"; path = "Target Support Files/Pods-RootTabBarController/Pods-RootTabBarController.release.xcconfig"; sourceTree = "<group>"; };
@@ -98,6 +106,10 @@
 				04567EAD22B3D6C9009268DE /* Others */,
 				04567EAC22B3D6B2009268DE /* Appmodules */,
 				04567E8622B3AA8F009268DE /* Assets.xcassets */,
+				04DB7403230D384B00FDFEA8 /* kindownP.jpg */,
+				04DB7401230D35B900FDFEA8 /* TopBarBg.jpg */,
+				04DB73FC230D328C00FDFEA8 /* navBarss.jpg */,
+				04DB73FA230D321300FDFEA8 /* kingdown.jpg */,
 				04567E8822B3AA8F009268DE /* LaunchScreen.storyboard */,
 				04567E8B22B3AA8F009268DE /* Info.plist */,
 			);
@@ -236,9 +248,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04DB73FD230D328C00FDFEA8 /* navBarss.jpg in Resources */,
 				04567E8A22B3AA8F009268DE /* LaunchScreen.storyboard in Resources */,
+				04DB73FB230D321300FDFEA8 /* kingdown.jpg in Resources */,
 				04567E8722B3AA8F009268DE /* Assets.xcassets in Resources */,
+				04DB7402230D35B900FDFEA8 /* TopBarBg.jpg in Resources */,
 				04567E8522B3AA8E009268DE /* Main.storyboard in Resources */,
+				04DB7404230D384C00FDFEA8 /* kindownP.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
