@@ -77,8 +77,13 @@ class RootTabBarViewController: UITabBarController {
             let barItem = UITabBarItem.init(title: model.title, image: UIImage(named: model.imageNormal)?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: model.imageSelected)?.withRenderingMode(.alwaysOriginal))
             
             //2.更改字体颜色
-            barItem.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : config.titleColorNormal!], for: .normal)
-            barItem.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : config.titleColorSelected!], for: .selected)
+            if #available(iOS 13.0, *) {
+                tabbar.tintColor = config.titleColorSelected
+                tabbar.unselectedItemTintColor = config.titleColorNormal
+            } else {
+                barItem.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : config.titleColorNormal!], for: .normal)
+                barItem.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : config.titleColorSelected!], for: .selected)
+            }
             
             //设置标题
            // model.controller.title = model.title

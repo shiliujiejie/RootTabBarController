@@ -7,15 +7,8 @@
 //
 
 import UIKit
-import Repeat
 
 class ViewController: UIViewController {
-    
-    
-    var timer: Repeater?
-    var timer1: Repeater?
-    var timer2: Repeater?
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,25 +66,4 @@ class ViewController: UIViewController {
     
     
 
-}
-
-
-
-extension ViewController {
-    
-    
-    func timeRepeat() {
-        self.timer = Repeater.once(after: .seconds(2.5), { (timer) in
-            print("Repeater.once(after: .seconds(2.5)")
-        })
-         self.timer1 = Repeater.every(.seconds(10.0)) { (timer) in
-            print("Repeater.every(.seconds(10.0))")
-        }
-        self.timer2 = Repeater.init(interval: .seconds(5), mode: .infinite, tolerance: .seconds(60), queue: DispatchQueue.main, observer: { (timer) in
-            print("Repeater.init(interval: .seconds(5), mode: .infinite, tolerance: .seconds(60)")
-        })
-        self.timer2?.start()
-       
-    }
-    
 }
