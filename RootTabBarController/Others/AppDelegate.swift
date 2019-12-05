@@ -39,6 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tabbarVc = RootTabBarViewController.init(config: getConfigModel(), tabBars: tabBars)
         window?.rootViewController = tabbarVc
         tabbarVc?.actionDelegate = self
+        tabbarVc?.delegate = self
         
     }
     
@@ -74,10 +75,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 // MARK: - RootTabbarControllerDelegate
-extension AppDelegate: RootTabbarControllerDelegate {
+extension AppDelegate: RootTabbarControllerDelegate, UITabBarControllerDelegate {
+    
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+    
+        if let nav = viewController as? RootNavigationController {
+            print("viewController.class ===== \(nav.viewControllers[0].classForCoder)")
+        }
+        
+    }
+
     func centerClickAction() {
          print("index")
         let nav = RootNavigationController(rootViewController: PresentController())
+        nav.modalPresentationStyle = .fullScreen
         tabbarVc?.present(nav, animated: true, completion: nil)
     }
 }

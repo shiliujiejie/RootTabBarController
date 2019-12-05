@@ -32,7 +32,7 @@ class MainController: UIViewController {
     }()
    
     private lazy var pageView: PageItemView = {
-        let view = PageItemView.init(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 40),config: config)
+        let view = PageItemView.init(frame: CGRect(x: 50, y: 0, width: screenWidth - 50, height: 40),config: config)
         view.backgroundColor = UIColor.clear
         view.titles = ["新闻","NBA","名从主人","能量球","不雅视频","生活小Tips","丛林贸易","朋友圈"]
         return view
@@ -58,6 +58,8 @@ class MainController: UIViewController {
         
         return pageVC
     }()
+    
+    var ispresent: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,7 +111,8 @@ extension MainController {
     }
     func layoutPageView() {
         pageView.snp.makeConstraints { (make) in
-            make.leading.trailing.equalToSuperview()
+            make.leading.equalTo(ispresent ? 50 : 0)
+            make.trailing.equalToSuperview()
             make.top.equalTo(0)
             make.height.equalTo(40)
         }

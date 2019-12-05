@@ -16,6 +16,8 @@ class PresentController: UIViewController {
         btn.setImage(UIImage(named: "navBackWhite"), for: .normal)
         btn.addTarget(self, action: #selector(click), for: .touchDown)
         btn.backgroundColor = UIColor.red
+        btn.layer.cornerRadius = 15.0
+        btn.layer.masksToBounds = true
         return btn
     }()
     
@@ -48,11 +50,13 @@ class PresentController: UIViewController {
         
         let rootModel1 = RootTabBarModel.init(title: tabBarTitles[0], imageNormal: tabBarNormalImages[0], imageSelected: tabBarSelectedImages[0], controller: UIViewController())
         
-        let rootModel2 = RootTabBarModel.init(title: tabBarTitles[1], imageNormal: tabBarNormalImages[1], imageSelected: tabBarSelectedImages[1], controller: MainController())
+        let mainVC = MainController()
+        mainVC.ispresent = true
+        let rootModel2 = RootTabBarModel.init(title: tabBarTitles[1], imageNormal: tabBarNormalImages[1], imageSelected: tabBarSelectedImages[1], controller: mainVC)
         
         let rootModel3 = RootTabBarModel.init(title: tabBarTitles[2], imageNormal: tabBarNormalImages[2], imageSelected: tabBarSelectedImages[2], controller: MsgController())
         
-        let rootModel4 = RootTabBarModel.init(title: tabBarTitles[3], imageNormal: tabBarNormalImages[3], imageSelected: tabBarSelectedImages[3], controller: MsgController())
+        let rootModel4 = RootTabBarModel.init(title: tabBarTitles[3], imageNormal: tabBarNormalImages[3], imageSelected: tabBarSelectedImages[3], controller: FindController())
         let tabBars =  [rootModel1, rootModel2, rootModel3, rootModel4]
         let tabbarVC = RootTabBarViewController.init(config: getConfigModel(), tabBars: tabBars)
         self.addChild(tabbarVC)
